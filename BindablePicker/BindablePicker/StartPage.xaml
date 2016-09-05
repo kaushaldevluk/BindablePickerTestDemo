@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:BindablePicker;assembly=BindablePicker"
+             x:Class="BindablePicker.StartPage" Title="Demo">
+  <ScrollView  Orientation = "Vertical" VerticalOptions="StartAndExpand">
+    <StackLayout>
+      <Label Text="{Binding strSystemElement}" TextColor="White"></Label>
+      <controls:BindablePicker
+            Title="Select System Element"
+            DisplayMemberPath="SystemElementName"
+            SelectedValuePath="SystemElementID"
+                    ItemsSource="{Binding SystemElementList}"
+                    SelectedValue="{Binding Path=SESelectedValue, Mode=TwoWay}" />
+    </StackLayout>
+  </ScrollView>
+</ContentPage>
